@@ -3,171 +3,218 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KorshaTek — Space Growth Studio</title>
+<title>Korshatek | Tourisme</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
 
 <style>
+
+/* GLOBAL */
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: radial-gradient(circle at top, #070A12, #02030A);
-    color: white;
-    line-height: 1.6;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(ellipse at bottom, #0c0c0c 0%, #000 100%);
+  color: white;
+  overflow-x: hidden;
 }
 
+h1, h2 {
+  font-family: 'Playfair Display', serif;
+}
+
+/* STARS */
+.stars {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.stars::after {
+  content: "";
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: rgba(255,255,255,0.8);
+  border-radius: 50%;
+  box-shadow:
+    100px 200px white,
+    300px 400px white,
+    500px 150px white,
+    700px 350px white,
+    900px 100px white,
+    1100px 250px white,
+    1300px 300px white,
+    1500px 200px white,
+    1700px 350px white;
+  animation: twinkle 4s infinite alternate;
+}
+
+@keyframes twinkle {
+  from {opacity: 0.4;}
+  to {opacity: 1;}
+}
+
+/* HEADER */
+.header {
+  text-align: center;
+  padding: 20px;
+}
+
+.logo {
+  width: 140px;
+}
+
+/* HERO */
 .hero {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
+  text-align: center;
+  padding: 80px 20px 120px;
 }
 
-h1 {
-    font-size: 3.2rem;
-    margin-bottom: 10px;
+.hero h1 {
+  font-size: 42px;
 }
 
-.subtitle {
-    max-width: 750px;
-    opacity: 0.8;
-    font-size: 1.1rem;
+.hero p {
+  color: #ccc;
+  font-size: 18px;
 }
 
+/* BUTTONS */
 .btn {
-    margin-top: 25px;
-    padding: 15px 32px;
-    background: linear-gradient(135deg, #6c63ff, #3f8cff);
-    color: white;
-    text-decoration: none;
-    border-radius: 40px;
-    font-weight: bold;
-    transition: 0.3s;
-    display: inline-block;
+  display: inline-block;
+  margin: 10px;
+  padding: 14px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
 }
 
-.btn:hover {
-    transform: scale(1.05);
+.btn-primary {
+  background: linear-gradient(135deg, #c9a46c, #e0b97f);
+  color: black;
 }
 
-.section {
-    padding: 90px 20px;
-    max-width: 950px;
-    margin: auto;
-    text-align: center;
+.btn-outline {
+  border: 1px solid #c9a46c;
+  color: #c9a46c;
 }
 
-h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
+/* SECTIONS */
+section {
+  padding: 70px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.grid {
+  display: grid;
+  gap: 20px;
 }
 
 .card {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.08);
-    padding: 22px;
-    border-radius: 18px;
-    margin-top: 15px;
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+  border-radius: 10px;
+  backdrop-filter: blur(6px);
 }
 
-.small {
-    opacity: 0.8;
+/* CTA */
+.cta {
+  text-align: center;
 }
 
-.footer {
-    padding: 50px 20px;
-    text-align: center;
-    opacity: 0.6;
-    font-size: 0.9rem;
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 30px;
+  color: #888;
 }
+
+/* WHATSAPP */
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  padding: 16px;
+  border-radius: 50%;
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+}
+
 </style>
 </head>
 
 <body>
 
+<div class="stars"></div>
+
+<!-- LOGO -->
+<div class="header">
+  <img src="logo.png" class="logo">
+</div>
+
 <!-- HERO -->
-<div class="hero">
-    <h1>KorshaTek</h1>
-    <p class="subtitle">
-        Studio de transformation digitale pour les acteurs du tourisme, des produits locaux et des initiatives territoriales du Sud-Est tunisien.
-        <br><br>
-        Nous transformons votre présence digitale en système de réservation et de conversion.
-    </p>
+<section class="hero">
+  <h1>Attirez plus de voyageurs<br>et remplissez vos réservations</h1>
+  <p>Nous aidons les maisons d’hôtes et expériences touristiques à obtenir plus de clients</p>
 
-    <a class="btn" href="https://wa.me/216XXXXXXXX">
-        Demander un diagnostic stratégique
-    </a>
-</div>
+  <a href="https://wa.me/21658237570" class="btn btn-primary">Diagnostic gratuit</a>
+  <a href="https://wa.me/21658237570" class="btn btn-outline">WhatsApp</a>
+</section>
 
-<!-- POSITION -->
-<div class="section">
-    <h2>Nous ne faisons pas du marketing générique</h2>
-    <div class="card">
-        Nous construisons des systèmes simples qui permettent aux entreprises de mieux se présenter, mieux vendre et mieux convertir.
-    </div>
-</div>
+<!-- PROBLEM -->
+<section>
+  <h2>Votre activité a du potentiel…</h2>
 
-<!-- PROBLEME -->
-<div class="section">
-    <h2>Le problème du marché</h2>
-    <div class="card small">
-        Beaucoup d’acteurs ont du potentiel mais :
-        pas de stratégie claire, pas de système de conversion, et une communication dispersée sur les réseaux sociaux.
-    </div>
-</div>
+  <div class="grid">
+    <div class="card">Beau lieu mais peu de clients</div>
+    <div class="card">Visiteurs intéressés mais ne réservent pas</div>
+    <div class="card">Communication pas claire</div>
+    <div class="card">Dépendance à Facebook</div>
+  </div>
+</section>
 
-<!-- APPROCHE -->
-<div class="section">
-    <h2>Notre approche</h2>
+<!-- SOLUTION -->
+<section>
+  <h2>Ce qu’on fait pour vous</h2>
 
-    <div class="card">📊 Analyse des données et du positionnement</div>
-    <div class="card">🎯 Structuration de l’offre et du message</div>
-    <div class="card">💬 Création de systèmes de conversion (WhatsApp, réservation, formulaire)</div>
-    <div class="card">📈 Suivi des résultats et optimisation</div>
-</div>
+  <div class="grid">
+    <div class="card">✔ On améliore votre image</div>
+    <div class="card">✔ On clarifie votre offre</div>
+    <div class="card">✔ On facilite les réservations</div>
+  </div>
+</section>
 
-<!-- SEGMENTS -->
-<div class="section">
-    <h2>Pour qui nous travaillons</h2>
+<!-- PROCESS -->
+<section>
+  <h2>Comment ça se passe</h2>
 
-    <div class="card">🏨 Tourisme : hôtels, maisons d’hôtes, expériences, excursions</div>
-    <div class="card">🌿 Produits locaux : huile d’olive, artisanat, terroir</div>
-    <div class="card">🏛️ Programmes territoriaux : ONG, incubateurs, plateformes régionales</div>
-</div>
-
-<!-- OFFRES -->
-<div class="section">
-    <h2>Offres principales</h2>
-
-    <div class="card">
-        <strong>Pack Visibilité & Conversion</strong><br>
-        Structuration + présence digitale + optimisation WhatsApp
-    </div>
-
-    <div class="card">
-        <strong>Pack Réservation & Expérience</strong><br>
-        Optimisation des offres + scripts + gestion des demandes
-    </div>
-
-    <div class="card">
-        <strong>Pack Marque Produits Locaux</strong><br>
-        Branding + storytelling + page produit + kit commercial
-    </div>
-</div>
+  <div class="grid">
+    <div class="card">1. Analyse de votre activité</div>
+    <div class="card">2. Identification des blocages</div>
+    <div class="card">3. Mise en place</div>
+    <div class="card">4. Résultats</div>
+  </div>
+</section>
 
 <!-- CTA -->
-<div class="section">
-    <h2>Vous avez du potentiel. Nous construisons le système.</h2>
-    <a class="btn" href="https://wa.me/216XXXXXXXX">
-        Réserver un diagnostic
-    </a>
-</div>
+<section class="cta">
+  <h2>On en parle ?</h2>
+  <p>Recevez des recommandations simples pour améliorer vos réservations</p>
+
+  <a href="https://wa.me/21658237570" class="btn btn-primary">WhatsApp</a>
+</section>
 
 <!-- FOOTER -->
-<div class="footer">
-    KorshaTek — Space Growth Studio | Sud-Est Tunisien
-</div>
+<footer>
+  Korshatek — Spécialiste tourisme Sud-Est tunisien
+</footer>
+
+<!-- FLOAT -->
+<a href="https://wa.me/21658237570" class="whatsapp">💬</a>
 
 </body>
 </html>
