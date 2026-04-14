@@ -161,7 +161,11 @@ footer {
   <h1>Attirez plus de voyageurs<br>et remplissez vos réservations</h1>
   <p>Nous aidons les maisons d’hôtes et expériences touristiques à obtenir plus de clients</p>
 
-  <a href="https://wa.me/21658237570" class="btn btn-primary">Diagnostic gratuit</a>
+  <button onclick="document.getElementById('form').scrollIntoView({behavior:'smooth'})"
+style="margin-top:25px;padding:15px 32px;background:linear-gradient(135deg,#6c63ff,#3f8cff);
+color:white;border:none;border-radius:40px;font-weight:bold;cursor:pointer;">
+Demander un diagnostic
+</button>
   <a href="https://wa.me/21658237570" class="btn btn-outline">WhatsApp</a>
 </section>
 
@@ -217,4 +221,29 @@ footer {
 <a href="https://wa.me/21658237570" class="whatsapp">💬</a>
 
 </body>
+  <div class="section" id="form">
+    <h2>Réserver votre diagnostic stratégique</h2>
+
+    <form action="https://formsubmit.co/TONEMAIL@gmail.com" method="POST">
+
+        <input type="text" name="name" placeholder="Nom de l'établissement" required
+        style="width:80%;padding:12px;margin:10px;border-radius:10px;border:none;"><br>
+
+        <input type="email" name="email" placeholder="Email" required
+        style="width:80%;padding:12px;margin:10px;border-radius:10px;border:none;"><br>
+
+        <input type="text" name="phone" placeholder="Téléphone / WhatsApp" required
+        style="width:80%;padding:12px;margin:10px;border-radius:10px;border:none;"><br>
+
+        <textarea name="message" placeholder="Décrivez votre activité" rows="4"
+        style="width:80%;padding:12px;margin:10px;border-radius:10px;border:none;"></textarea><br>
+
+        <button type="submit"
+        style="padding:14px 28px;background:#6c63ff;color:white;border:none;border-radius:30px;font-weight:bold;">
+        Envoyer la demande
+        </button>
+
+    </form>
+</div>
+
 </html>
