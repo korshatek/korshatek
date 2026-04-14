@@ -6,192 +6,314 @@
 <title>KorshaTek — Space Growth Studio</title>
 
 <style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: radial-gradient(circle at top, #070A12, #02030A);
-    color: white;
-    line-height: 1.6;
+
+/* BRAND */
+:root{
+    --primary:#ffbd59;
+    --dark:#0b0f1a;
+}
+
+/* BODY */
+body{
+    margin:0;
+    font-family:"Poppins", Arial, sans-serif;
+    background: radial-gradient(circle at top, #0d1224, #05070f);
+    color:white;
+    overflow-x:hidden;
+}
+
+/* 🌌 STARS BACKGROUND */
+.stars {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -2;
+    pointer-events:none;
+}
+
+.star {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    box-shadow: 0 0 10px white;
+    animation: twinkle 2.5s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+    0% { opacity: 0.2; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.8); }
+    100% { opacity: 0.2; transform: scale(1); }
+}
+
+/* SOFT GOLD GLOW */
+body::before{
+    content:"";
+    position:fixed;
+    width:600px;
+    height:600px;
+    background: radial-gradient(circle, rgba(255,189,89,0.18), transparent 60%);
+    top:-120px;
+    left:-120px;
+    filter:blur(70px);
+    z-index:-1;
 }
 
 /* HERO */
-.hero {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
+.hero{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
 }
 
-h1 {
-    font-size: 3.2rem;
-    margin-bottom: 10px;
+.logo{
+    width:120px;
+    margin-bottom:20px;
+    filter: drop-shadow(0 0 10px rgba(255,189,89,0.5));
 }
 
-.subtitle {
-    max-width: 750px;
-    opacity: 0.8;
-    font-size: 1.1rem;
+h1{
+    font-size:3.5rem;
+    margin-bottom:10px;
 }
 
-/* BUTTON */
-.btn {
-    margin-top: 25px;
-    padding: 15px 32px;
-    background: linear-gradient(135deg, #6c63ff, #3f8cff);
-    color: white;
-    text-decoration: none;
-    border-radius: 40px;
-    font-weight: bold;
-    transition: 0.3s;
-    border: none;
-    cursor: pointer;
+.subtitle{
+    max-width:750px;
+    opacity:0.8;
 }
 
-.btn:hover {
-    transform: scale(1.05);
+/* BUTTONS */
+.btn{
+    margin-top:15px;
+    padding:15px 32px;
+    border-radius:50px;
+    font-weight:600;
+    cursor:pointer;
+    text-decoration:none;
+    display:inline-block;
+    transition:0.4s;
+}
+
+/* GOLD BUTTON */
+.btn-primary{
+    background:linear-gradient(135deg, #ffbd59, #ff9f1c);
+    color:#0b0f1a;
+    border:none;
+}
+
+.btn-primary:hover{
+    transform:translateY(-3px);
+}
+
+/* WHATSAPP */
+.btn-wa{
+    background:rgba(0,0,0,0.4);
+    color:var(--primary);
+    border:2px solid var(--primary);
+}
+
+.btn-wa:hover{
+    transform:translateY(-3px);
 }
 
 /* SECTIONS */
-.section {
-    padding: 90px 20px;
-    max-width: 950px;
-    margin: auto;
-    text-align: center;
+.section{
+    padding:90px 20px;
+    max-width:950px;
+    margin:auto;
+    text-align:center;
 }
 
-h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
+h2{
+    font-size:2.2rem;
+    margin-bottom:20px;
 }
 
-.card {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.08);
-    padding: 22px;
-    border-radius: 18px;
-    margin-top: 15px;
+/* CARDS */
+.card{
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.08);
+    padding:22px;
+    border-radius:18px;
+    margin-top:15px;
+    backdrop-filter: blur(10px);
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    border-color:rgba(255,189,89,0.4);
 }
 
 /* FORM */
-input, textarea {
-    width: 80%;
-    padding: 12px;
-    margin: 10px;
-    border-radius: 10px;
-    border: none;
-    outline: none;
+input, textarea{
+    width:80%;
+    padding:12px;
+    margin:10px;
+    border-radius:12px;
+    border:none;
+    background:rgba(255,255,255,0.05);
+    color:white;
+    outline:none;
 }
 
-.footer {
-    padding: 50px 20px;
-    text-align: center;
-    opacity: 0.6;
-    font-size: 0.9rem;
+/* POPUP */
+.popup{
+    display:none;
+    position:fixed;
+    top:12%;
+    left:50%;
+    transform:translateX(-50%);
+    width:85%;
+    max-width:600px;
+    background:rgba(11,15,26,0.95);
+    border:1px solid var(--primary);
+    padding:25px;
+    border-radius:18px;
+    z-index:999;
 }
+
+.popup h2{
+    color:var(--primary);
+}
+
+.close{
+    float:right;
+    cursor:pointer;
+    color:#ff4d4d;
+    font-size:18px;
+}
+
 </style>
 </head>
 
 <body>
 
+<!-- 🌌 STARS -->
+<div class="stars">
+    <div class="star" style="top:5%; left:10%;"></div>
+    <div class="star" style="top:10%; left:40%;"></div>
+    <div class="star" style="top:15%; left:80%;"></div>
+
+    <div class="star" style="top:25%; left:20%;"></div>
+    <div class="star" style="top:30%; left:60%;"></div>
+    <div class="star" style="top:35%; left:90%;"></div>
+
+    <div class="star" style="top:45%; left:15%;"></div>
+    <div class="star" style="top:50%; left:50%;"></div>
+    <div class="star" style="top:55%; left:75%;"></div>
+
+    <div class="star" style="top:65%; left:30%;"></div>
+    <div class="star" style="top:70%; left:70%;"></div>
+    <div class="star" style="top:75%; left:90%;"></div>
+
+    <div class="star" style="top:85%; left:25%;"></div>
+    <div class="star" style="top:90%; left:60%;"></div>
+</div>
+
 <!-- HERO -->
 <div class="hero">
 
-    <!-- LOGO (optionnel) -->
-    <!-- <img src="logo2025.png" style="width:120px;margin-bottom:20px;"> -->
+    <img src="logo.png" class="logo" alt="KorshaTek Logo">
 
     <h1>KorshaTek</h1>
 
     <p class="subtitle">
-        Studio de transformation digitale pour les acteurs du tourisme, des produits locaux et des initiatives territoriales du Sud-Est tunisien.
-        Nous transformons votre présence digitale en système de réservation et de conversion.
+        Studio de transformation digitale pour le tourisme,
+        les produits locaux et les initiatives territoriales du Sud-Est tunisien.
     </p>
 
-    <!-- BUTTON SCROLL -->
-<button class="btn"
-onclick="document.getElementById('form').scrollIntoView({behavior:'smooth'})">
-Demander un diagnostic
-</button>
+    <button class="btn btn-primary"
+    onclick="document.getElementById('form').scrollIntoView({behavior:'smooth'})">
+        Demander un diagnostic
+    </button>
+
+    <a class="btn btn-wa"
+    href="https://wa.me/216XXXXXXXX?text=Bonjour%20je%20veux%20un%20diagnostic">
+        WhatsApp
+    </a>
 
 </div>
 
-<!-- POSITION -->
+<!-- VALUE -->
 <div class="section">
     <h2>Nous ne faisons pas du marketing générique</h2>
     <div class="card">
-        Nous construisons des systèmes simples qui permettent aux entreprises de mieux se présenter, mieux vendre et mieux convertir.
+        Nous transformons votre présence digitale en système de conversion client.
     </div>
-</div>
-
-<!-- PROBLEME -->
-<div class="section">
-    <h2>Le problème du marché</h2>
-    <div class="card">
-        Beaucoup d’acteurs ont du potentiel mais manquent de structure digitale et de système de conversion.
-    </div>
-</div>
-
-<!-- APPROCHE -->
-<div class="section">
-    <h2>Notre approche</h2>
-
-    <div class="card">📊 Analyse des données et positionnement</div>
-    <div class="card">🎯 Structuration de l’offre et du message</div>
-    <div class="card">💬 Système de conversion (WhatsApp / réservation)</div>
-    <div class="card">📈 Suivi et optimisation</div>
 </div>
 
 <!-- SEGMENTS -->
 <div class="section">
     <h2>Pour qui nous travaillons</h2>
 
-    <div class="card">🏨 Tourisme : hôtels, maisons d’hôtes, excursions</div>
-    <div class="card">🌿 Produits locaux : huile d’olive, artisanat</div>
-    <div class="card">🏛️ Programmes territoriaux : ONG, incubateurs</div>
+    <div class="card">🏨 Tourisme</div>
+    <div class="card">🌿 Produits locaux</div>
+    <div class="card">🏛️ Programmes territoriaux</div>
 </div>
 
-<!-- OFFRES -->
+<!-- PACKS -->
 <div class="section">
-    <h2>Offres principales</h2>
+    <h2>Nos Packs</h2>
 
-    <div class="card"><strong>Pack Visibilité & Conversion</strong></div>
-    <div class="card"><strong>Pack Réservation & Expérience</strong></div>
-    <div class="card"><strong>Pack Marque Produits Locaux</strong></div>
+    <div class="card" onclick="openPopup('p1')">Pack Visibilité & Conversion</div>
+    <div class="card" onclick="openPopup('p2')">Pack Réservation & Expérience</div>
+    <div class="card" onclick="openPopup('p3')">Pack Produits Locaux</div>
 </div>
 
-<!-- CTA -->
-<div class="section">
-    <h2>Vous avez du potentiel. Nous construisons le système.</h2>
-</div>
-
-<!-- FORM SECTION -->
+<!-- FORM -->
 <div class="section" id="form">
-    <h2>Réserver votre diagnostic stratégique</h2>
+    <h2>Réserver votre diagnostic</h2>
 
     <form action="https://formsubmit.co/TONEMAIL@gmail.com" method="POST">
 
-        <input type="text" name="name" placeholder="Nom de l'établissement" required><br>
-
+        <input type="text" name="name" placeholder="Nom" required><br>
         <input type="email" name="email" placeholder="Email" required><br>
+        <input type="text" name="phone" placeholder="WhatsApp" required><br>
+        <textarea rows="4" name="message" placeholder="Message"></textarea><br>
 
-        <input type="text" name="phone" placeholder="WhatsApp / Téléphone" required><br>
-
-        <textarea name="message" rows="4" placeholder="Décrivez votre activité" required></textarea><br>
-
-        <button class="btn" type="submit">
-            Envoyer la demande
+        <button class="btn btn-primary" type="submit">
+            Envoyer
         </button>
 
     </form>
 </div>
+
+<!-- POPUPS -->
+<div id="p1" class="popup">
+    <span class="close" onclick="closePopup('p1')">X</span>
+    <h2>Pack Visibilité</h2>
+    <p>Amélioration de votre image + génération de clients.</p>
 </div>
 
-<!-- FOOTER -->
-<div class="footer">
-    KorshaTek — Space Growth Studio | Sud-Est Tunisien
+<div id="p2" class="popup">
+    <span class="close" onclick="closePopup('p2')">X</span>
+    <h2>Pack Réservation</h2>
+    <p>Transformation des demandes en réservations.</p>
 </div>
+
+<div id="p3" class="popup">
+    <span class="close" onclick="closePopup('p3')">X</span>
+    <p>Branding et storytelling produits locaux.</p>
+</div>
+
+<script>
+function openPopup(id){
+    document.getElementById(id).style.display="block";
+}
+function closePopup(id){
+    document.getElementById(id).style.display="none";
+}
+</script>
 
 </body>
 </html>
