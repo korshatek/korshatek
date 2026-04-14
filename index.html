@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KorshaTek — Studio Digital</title>
+<title>KorshaTek — Digital Studio</title>
 
 <style>
 
@@ -11,52 +11,51 @@
     --primary:#ffbd59;
 }
 
-/* BODY (HOMOGÈNE BRAND BACKGROUND) */
+/* BODY */
 body{
     margin:0;
     font-family: Arial, sans-serif;
-    background: #000000;
+    background:#0b0f1a;
     color:white;
     overflow-x:hidden;
 }
 
-/* GLOW VERY SOFT (same color as logo) */
+/* 🌌 STARS */
+.stars{
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    z-index:-2;
+}
+
+.star{
+    position:absolute;
+    width:1.2px;
+    height:1.2px;
+    background:white;
+    border-radius:50%;
+    opacity:0.4;
+    animation:twinkle 4s infinite ease-in-out;
+}
+
+@keyframes twinkle{
+    0%{opacity:0.1;}
+    50%{opacity:0.7;}
+    100%{opacity:0.1;}
+}
+
+/* GLOW */
 body::before{
     content:"";
     position:fixed;
     width:700px;
     height:700px;
-    background: radial-gradient(circle, rgba(255,189,89,0.12), transparent 60%);
+    background:radial-gradient(circle, rgba(255,189,89,0.12), transparent 60%);
     top:-150px;
     left:-150px;
-    z-index:-2;
-}
-
-/* 🌌 STARS VERY SUBTLE */
-.stars {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: -3;
-    pointer-events:none;
-}
-
-.star {
-    position: absolute;
-    width: 1.2px;
-    height: 1.2px;
-    background: white;
-    border-radius: 50%;
-    opacity: 0.4;
-    animation: twinkle 4s infinite ease-in-out;
-}
-
-@keyframes twinkle {
-    0% { opacity: 0.1; }
-    50% { opacity: 0.7; }
-    100% { opacity: 0.1; }
+    z-index:-1;
 }
 
 /* HERO */
@@ -70,24 +69,20 @@ body::before{
     padding:20px;
 }
 
-/* LOGO (NO EFFECTS) */
 .logo{
     width:120px;
     margin-bottom:20px;
-    /* IMPORTANT: NO shadow, NO glow */
     filter:none;
 }
 
-/* TITLE */
 h1{
     font-size:3.2rem;
-    margin-bottom:10px;
     color:var(--primary);
 }
 
 .subtitle{
     max-width:750px;
-    opacity:0.8;
+    opacity:0.85;
 }
 
 /* BUTTONS */
@@ -101,11 +96,10 @@ h1{
     display:inline-block;
 }
 
-/* PRIMARY BUTTON */
+/* PRIMARY */
 .btn-primary{
     background:var(--primary);
     color:#0b0f1a;
-    border:none;
 }
 
 /* WHATSAPP */
@@ -117,36 +111,24 @@ h1{
 
 /* SECTIONS */
 .section{
-    padding:90px 20px;
+    padding:80px 20px;
     max-width:900px;
     margin:auto;
     text-align:center;
 }
 
 h2{
-    font-size:2rem;
-    margin-bottom:20px;
     color:var(--primary);
 }
 
-/* CARDS */
+/* CARD */
 .card{
     background:rgba(255,255,255,0.03);
     border:1px solid rgba(255,189,89,0.15);
-    padding:22px;
+    padding:20px;
     border-radius:15px;
     margin-top:15px;
-}
-
-/* FORM */
-input, textarea{
-    width:80%;
-    padding:12px;
-    margin:10px;
-    border-radius:10px;
-    border:none;
-    background:rgba(255,255,255,0.05);
-    color:white;
+    cursor:pointer;
 }
 
 /* POPUP */
@@ -169,7 +151,42 @@ input, textarea{
     float:right;
     cursor:pointer;
     color:var(--primary);
-    font-size:18px;
+}
+
+/* FORM PREMIUM */
+.form-box{
+    background:rgba(255,255,255,0.03);
+    border:1px solid rgba(255,189,89,0.2);
+    padding:30px;
+    border-radius:18px;
+    max-width:500px;
+    margin:auto;
+    backdrop-filter:blur(10px);
+}
+
+.form-box input,
+.form-box textarea,
+.form-box select{
+    width:100%;
+    margin:10px 0;
+    padding:14px;
+    border-radius:12px;
+    border:1px solid rgba(255,189,89,0.15);
+    background:rgba(0,0,0,0.3);
+    color:white;
+    outline:none;
+}
+
+.form-box input:focus,
+.form-box textarea:focus,
+.form-box select:focus{
+    border-color:var(--primary);
+}
+
+.form-note{
+    font-size:12px;
+    opacity:0.6;
+    margin-top:10px;
 }
 
 </style>
@@ -177,7 +194,7 @@ input, textarea{
 
 <body>
 
-<!-- 🌌 SUBTLE STARS -->
+<!-- 🌌 STARS -->
 <div class="stars">
     <div class="star" style="top:10%; left:20%;"></div>
     <div class="star" style="top:25%; left:70%;"></div>
@@ -190,14 +207,13 @@ input, textarea{
 <!-- HERO -->
 <div class="hero">
 
-    <!-- LOGO (CLEAN) -->
-    <img src="logo2025.png" class="logo" alt="KorshaTek Logo">
+    <img src="logo2025.png" class="logo">
 
     <h1>KorshaTek</h1>
 
     <p class="subtitle">
-        Studio de transformation digitale pour le tourisme,
-        les produits locaux et les initiatives territoriales du Sud-Est tunisien.
+        Studio de transformation digitale pour le tourisme et les marques locales.
+        Nous transformons votre visibilité en clients réels.
     </p>
 
     <button class="btn btn-primary"
@@ -205,8 +221,7 @@ input, textarea{
         Demander un diagnostic
     </button>
 
-    <a class="btn btn-wa"
-    href="https://wa.me/21658237570">
+    <a class="btn btn-wa" href="https://wa.me/21658237570">
         WhatsApp
     </a>
 
@@ -214,51 +229,84 @@ input, textarea{
 
 <!-- VALUE -->
 <div class="section">
-    <h2>Nous ne faisons pas du marketing générique</h2>
+    <h2>Positionnement</h2>
     <div class="card">
-        Nous construisons des systèmes simples qui transforment les entreprises en clients.
+        Nous transformons votre présence digitale en système de conversion client.
     </div>
 </div>
 
 <!-- SEGMENTS -->
 <div class="section">
-    <h2>Pour qui nous travaillons</h2>
-
-    <div class="card">🏨 Tourisme</div>
-    <div class="card">🌿 Produits locaux</div>
-    <div class="card">🏛️ Programmes territoriaux</div>
+    <h2>Pour qui</h2>
+    <div class="card"> Tourisme</div>
+    <div class="card"> Produits locaux</div>
+    <div class="card"> Programmes territoriaux</div>
 </div>
+
+<!-- PACKS -->
 <div class="section">
     <h2>Nos Packs</h2>
 
-    <div class="card" onclick="openPopup('p1')">
-        Pack Visibilité & Conversion
-    </div>
-
-    <div class="card" onclick="openPopup('p2')">
-        Pack Réservation & Expérience
-    </div>
-
-    <div class="card" onclick="openPopup('p3')">
-        Pack Produits Locaux
-    </div>
+    <div class="card" onclick="openPopup('p1')">Pack Visibilité & Conversion</div>
+    <div class="card" onclick="openPopup('p2')">Pack Réservation & Expérience</div>
+    <div class="card" onclick="openPopup('p3')">Pack Produits Locaux</div>
 </div>
+
 <!-- FORM -->
 <div class="section" id="form">
-    <h2>Réserver votre diagnostic</h2>
+    <h2>Réserver un diagnostic</h2>
 
     <form action="https://formsubmit.co/korshatek@gmail.com" method="POST">
 
-        <input type="text" name="name" placeholder="Nom" required><br>
-        <input type="email" name="email" placeholder="Email" required><br>
-        <input type="text" name="phone" placeholder="WhatsApp" required><br>
-        <textarea rows="4" name="message" placeholder="Message"></textarea><br>
+        <div class="form-box">
 
-        <button class="btn btn-primary" type="submit">
-            Envoyer
-        </button>
+            <input type="text" name="name" placeholder="Nom complet" required>
+
+            <input type="email" name="email" placeholder="Email professionnel" required>
+
+            <input type="text" name="phone" placeholder="Numéro WhatsApp" required>
+
+            <select name="service" required>
+                <option value="">Votre activité</option>
+                <option>Hôtel / Hébergement</option>
+                <option>Maison d’hôtes</option>
+                <option>Tourisme / Excursions</option>
+                <option>Produit local / Artisanat</option>
+                <option>Autre</option>
+            </select>
+
+            <textarea name="message" rows="4"
+            placeholder="Décrivez votre situation actuelle"></textarea>
+
+            <button class="btn btn-primary" type="submit">
+                Recevoir mon diagnostic
+            </button>
+
+            <p class="form-note">
+                Réponse sous 24h — Analyse personnalisée
+            </p>
+
+        </div>
 
     </form>
+</div>
+
+<!-- POPUPS -->
+<div id="p1" class="popup">
+    <span class="close" onclick="closePopup('p1')">X</span>
+    <h2>Pack Visibilité</h2>
+    <p>Optimisation complète pour attirer plus de clients et demandes.</p>
+</div>
+
+<div id="p2" class="popup">
+    <span class="close" onclick="closePopup('p2')">X</span>
+    <h2>Pack Réservation</h2>
+    <p>Transformation des demandes en réservations concrètes.</p>
+</div>
+
+<div id="p3" class="popup">
+    <span class="close" onclick="closePopup('p3')">X</span>
+    <p>Branding et storytelling pour produits locaux.</p>
 </div>
 
 <script>
